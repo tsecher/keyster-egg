@@ -1,15 +1,15 @@
-import { KeysterEggWord } from "./KeysterEggWord";
+import KeysterEggWord from "./KeysterEggWord";
 
 /**
  * class KeysterEggManager
- * 
+ *
  * Call a callback when user tap a specific keyword on the screen.
  */
-export class KeysterEggManager{
+export default class KeysterEggManager{
 
     /**
      * Contruct the manager.
-     * 
+     *
      * @params string type
      *      The type of key trigger
      */
@@ -30,11 +30,11 @@ export class KeysterEggManager{
         const allowedTypes = this.getAllowedTypes()
         this.type = allowedTypes.indexOf(type) > -1 ? type : allowedTypes[0]
     }
-    
+
     /**
      * Add a case sensitive listener on the word.
-     * 
-     * @param {string} word 
+     *
+     * @param {string} word
      */
     onCaseSensitive(word){
         const keysterEggWord = this._getKeysterEggWord(word)
@@ -46,7 +46,7 @@ export class KeysterEggManager{
     /**
      * Add a case unsensitive listener on the word.
      *
-     * @param {string} word 
+     * @param {string} word
      */
     onCaseUnsensitive(word){
         const keysterEggWord = this._getKeysterEggWord(word)
@@ -73,8 +73,8 @@ export class KeysterEggManager{
     /**
      * Create and return KeysterEggWord
      *
-     * @param {string} word 
-     * 
+     * @param {string} word
+     *
      * @returns {KeysterEggWord}
      */
     _getKeysterEggWord(word){
@@ -84,7 +84,7 @@ export class KeysterEggManager{
     /**
      * Look into KeysterEggWords if an event has to be dispatched on word match.
      *
-     * @param {*} evt 
+     * @param {*} evt
      */
     _onEvent(evt){
         this.sentence += evt.key
@@ -96,7 +96,7 @@ export class KeysterEggManager{
     /**
      * Reinit the sentence.
      *
-     * @param {string|null} word 
+     * @param {string|null} word
      */
     _reinitSentence(word=''){
         this.sentence = ''
@@ -104,12 +104,12 @@ export class KeysterEggManager{
 
     /**
      * If word is in sentence, then call the success callback of kesterEggWord.
-     * @param {string} word 
-     * @param {KeysterEggWord} keysterEggWord 
-     * @param {string} sentence 
+     * @param {string} word
+     * @param {KeysterEggWord} keysterEggWord
+     * @param {string} sentence
      */
     _testWord(word, keysterEggWord, sentence){
-        if (sentence.indexOf(word) > -1 ){            
+        if (sentence.indexOf(word) > -1 ){
             keysterEggWord.callThen();
             this._reinitSentence(word)
         }

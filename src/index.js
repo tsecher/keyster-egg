@@ -1,4 +1,3 @@
-import { KeysterEggManager } from "./KeysterEggManager";
+import KeysterEggManager from "./class/KeysterEggManager";
 
-const KeysterEgg = new KeysterEggManager();
-export default KeysterEgg;
+export default new KeysterEggManager();

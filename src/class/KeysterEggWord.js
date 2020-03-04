@@ -4,7 +4,7 @@
  * 
  * We simulate promise with KeysterEggWord to call then function several times.
  */
-export class KeysterEggWord{
+export default class KeysterEggWord{
 
     /**
      * Constrcutor.
