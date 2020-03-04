@@ -1,0 +1,14 @@
+{
+    "name": "keyster-egg",
+    "version": "1.0.0",
+    "description": "Add tools to play a callback when user tap a specific word.",
+    "main": "src/index.js",
+    "keywords": [
+      "keyboard",
+      "easter-egg"
+    ],
+    "author": "Thomas Sécher",
+    "license": "ISC",
+    "dependencies": {
+    }
+  }
